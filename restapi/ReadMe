@@ -1,0 +1,7 @@
+http://localhost:8080/restapi/api/users/test uri for getAllUsers
+
+Post for createUser
+
+curl -X POST -H "Content-Type: application/json" -d '{"firstName":"Shubhendra","lastName":"shrimal","age":23,"gender":"male","phone":4193784509}' http://localhost:8080/restapi/api/users/create/
+
+curl -X PUT -H "Content-Type: application/json" -d '{"firstName":"Shubhendra","lastName":"shrimal","age":24,"gender":"male","phone":4193784589}' http://localhost:8080/restapi/api/users/update/1
