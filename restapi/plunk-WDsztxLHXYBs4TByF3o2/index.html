@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8" />
+    <title>AngularJS Plunker</title>
+    <script>document.write('<base href="' + document.location + '" />');</script>
+    <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <script data-require="angular.js@1.5.x" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.11/angular.min.js" data-semver="1.5.11"></script>
+  </head>
+
+  <body ng-app="bunker" ng-controller="MainController as mainVMCntrl">
+    <div class="container-fluid">
+      <div class="row">
+          <div class="col-sm-3">
+              <form ng-submit="mainVMCntrl.addUser()">
+                  <div class="form-group">
+                      <label for="name">Name</label>
+                      <input type="text" class="form-control" id="name" placeholder="Name" ng-model="mainVMCntrl.newUser.name" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="Profile">Profile</label>
+                      <input type="text" class="form-control" id="profile" placeholder="Profile" ng-model="mainVMCntrl.newUser.profile" required>
+                    </div>
+                    <div>
+                      <label for="Email">Email</label>
+                      <input type="email" class="form-control" id="email" placeholder="Email" ng-model="mainVMCntrl.newUser.email" required>
+                    </div>
+                  
+                    <button type="submit" class="btn btn-primary"> Submit </button>
+                     </form>
+                     
+                     </div>
+            <div class="col-sm-9">
+            <table class="table table-striped">
+              <thead>
+              <tr>
+              <th>Profile-Picture</th>
+              <th>Name</th>
+              <th>Profile</th>
+              <th>Action</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr ng-repeat="user in mainVMCntrl.users">
+              <td>
+                <img class="profile-pic" ng-src="{{user.profilePicture}}" />
+              </td>
+              <td>{{user.name}}</td>
+              <td>{{user.profile}}</td>
+              <td ng-click="mainVMCntrl.deleteUser(user.id)">
+                <i class="glyphicon glyphicon-remove"></i>
+                </td>
+              </tr>
+              </tbody>
+              </table>
+              </div>
+          </div>
+        </div>
+    <script src="angular.module.js"></script>
+    <script src="angular.controller.js"></script>
+    <script src="https://cdn.jsdelivr.net/lodash/4.17.4/lodash.min.js"></script>
+    
+  </body>
+
+</html>
